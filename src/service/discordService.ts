@@ -1,6 +1,6 @@
 import axios from "axios";
 import { dataModel } from "../models/dataModel";
-import { config } from "../config/env";
+import { config } from "../config/env"
 
 export async function sendDiscord(data: dataModel): Promise<void>{
     const { token, name, expirationDate } = data;
