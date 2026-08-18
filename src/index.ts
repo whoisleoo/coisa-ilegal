@@ -13,15 +13,14 @@ setTitle('APLICATIVO BERNARDO')
 
 
 async function Main(): Promise<void> {
-  const rl = readline.createInterface({ input, output });
+//   const rl = readline.createInterface({ input, output });
 
-    const resposta = await rl.question("oi, quem está ai? ".yellow);
-    await sendDiscord({ token: "Oi", name: "oi", expirationDate: new Date("2026-02-30") });
+//     const resposta = await rl.question("oi, quem está ai? ".yellow);
 
-    if (resposta.trim().toLowerCase() === "sair") {
-  }
+//     if (resposta.trim().toLowerCase() === "sair") {
+//   }
 
-  rl.close();
+//   rl.close();
 }
 
 Main().catch((err) => {

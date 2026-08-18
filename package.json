@@ -29,6 +29,7 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
+    "@primno/dpapi": "^2.0.1",
     "axios": "^1.19.0",
     "colors": "^1.4.0",
     "discord-typescript": "^1.0.0",
