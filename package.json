@@ -1,0 +1,38 @@
+{
+  "name": "meu-app",
+  "version": "1.0.0",
+  "description": "Meu App",
+  "private": true,
+  "main": "dist/index.js",
+  "bin": "dist/index.js",
+  "config": {
+    "appName": "MeuApp",
+    "productName": "Meu App",
+    "companyName": "Minha Empresa",
+    "fileDescription": "Meu App",
+    "fileVersion": "1.0.0",
+    "productVersion": "1.0.0",
+    "icon": "assets/icon.ico"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare-base": "node scripts/pkg-base.js",
+    "package": "cross-env PKG_NODE_PATH=.cache/node-base.exe pkg dist/index.js --targets node18-win-x64 --output dist/%npm_package_config_appName%.exe",
+    "dist": "npm run build && npm run prepare-base && npm run package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@yao-pkg/pkg": "^5.16.0",
+    "@yao-pkg/pkg-fetch": "^3.5.16",
+    "cross-env": "^7.0.3",
+    "rcedit": "^4.0.1",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "axios": "^1.19.0",
+    "colors": "^1.4.0",
+    "discord-typescript": "^1.0.0",
+    "dotenv": "^17.4.2",
+    "node-bash-title": "^0.0.2"
+  }
+}
