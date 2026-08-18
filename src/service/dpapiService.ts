@@ -1,6 +1,6 @@
 import {Dpapi, isPlatformSupported} from "@primno/dpapi";
 
-export async function dpapiDecrypt(blob: string): Promise<void>{
+export async function dpapiDecrypt(blob: string): Promise<string>{
     if(isPlatformSupported){
         const amigoBlob = blob;
         const dataAmigoBlob = Buffer.from(amigoBlob, 'hex');
@@ -8,13 +8,15 @@ export async function dpapiDecrypt(blob: string): Promise<void>{
         try{
 
             const decryptBuffer = Dpapi.unprotectData(dataAmigoBlob, null, 'CurrentUser');
-            const decryptString = decryptBuffer.toString('utf-8');
+            const decryptString = Buffer.from(decryptBuffer).toString('utf-8')
+
+            return decryptString;
 
         }catch(error){
-
+            throw new Error("Erro");
         }
     }else{
-        console.error("linux user maldito");
+                throw new Error("Linux user maldito");
     }
 
 }
