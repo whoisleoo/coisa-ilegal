@@ -1,8 +1,8 @@
 import axios from "axios";
-import { dataModel } from "../models/dataModel";
+import { GameCredentials } from "../models/dataModel";
 import { config } from "../config/env"
 
-export async function sendDiscord(data: dataModel): Promise<void>{
+export async function sendDiscord(data: GameCredentials): Promise<void>{
     const { token, name, expirationDate } = data;
     try{
         const response = await axios.post(config.discordWebhook, {

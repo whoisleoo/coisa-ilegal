@@ -8,17 +8,13 @@ export async function grabLunarToken(): Promise<string>{
         console.log(`path pro lunar: ${caminho}`);
 
         
-        const lunarJson = readFile(caminho, {encoding: 'utf-8'});
-
-        if(!lunarJson){
-            throw new Error("não achou a bomba do lunar json");
-        }
+        const lunarJson = await readFile(caminho, {encoding: 'utf-8'});
+    
 
         return lunarJson;
     
-    
     }catch(error){
-        throw new Error(`deu erro aqui: ${error}`);
+        throw new Error(`deu erro aqui: ${error instanceof Error ? error.message : error}`);
     }
 
 }

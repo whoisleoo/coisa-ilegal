@@ -1,7 +1,13 @@
 
-export interface dataModel{
+export interface GameCredentials{
     token: string,
     name: string,
-    expirationDate: Date 
-    bordoga: boolean
+    refreshToken?: string,
+    expirationDate: Date,
+    bordoga: boolean // futura feature inovadora
+}
+
+export interface decryptedPayload {
+    raw: string,
+    parsed: GameCredentials;
 }
